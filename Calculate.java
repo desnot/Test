@@ -2,26 +2,28 @@ import java.util.Scanner;
 public class Calculate {
 
     public static void main(String[] args) {
-        System.out.println("Please select an action");
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Please select an action");
         String deistvie = scanner.nextLine();
+        System.out.println("Please enter a first number");
         int first = Integer.parseInt(scanner.nextLine());
+        System.out.println("Please enter a second number");
         int second = Integer.parseInt(scanner.nextLine());
         switch (deistvie) {
             case "+":
-                System.out.println(summa(first, second));
+                System.out.println("Result = " + summa(first, second));
                 break;
 
             case "-":
-                System.out.println(vichitanie(first, second));
+                System.out.println("Result = " + vichitanie(first, second));
                 break;
 
             case "*":
-                System.out.println(proizv(first, second));
+                System.out.println("Result = " + proizv(first, second));
                 break;
 
             case "/":
-                System.out.println(delenie(first, second));
+                System.out.println("Result = " + delenie(first, second));
                 break;
             case "^":
                 System.out.println(stepen(first, second));
