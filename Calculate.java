@@ -1,57 +1,37 @@
-import java.util.Scanner;
 public class Calculate {
+    private double result;
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Please select an action");
-        String deistvie = scanner.nextLine();
-        System.out.println("Please enter a first number");
-        int first = Integer.parseInt(scanner.nextLine());
-        System.out.println("Please enter a second number");
-        int second = Integer.parseInt(scanner.nextLine());
-        switch (deistvie) {
-            case "+":
-                System.out.println("Result = " + summa(first, second));
-                break;
-
-            case "-":
-                System.out.println("Result = " + vichitanie(first, second));
-                break;
-
-            case "*":
-                System.out.println("Result = " + proizv(first, second));
-                break;
-
-            case "/":
-                System.out.println("Result = " + delenie(first, second));
-                break;
-            case "^":
-                System.out.println(stepen(first, second));
-                break;
-        }
+    public void summa(int first, int second)
+    {
+        result = first + second;
+    }
+    public void vichitanie(int first, int second)
+    {
+        result = first - second;
     }
 
-    public static int summa(int first, int second)
+    public void proizv(int first, int second)
     {
-        return first + second;
-    }
-    public static int vichitanie(int first, int second)
-    {
-        return first - second;
+        result = first * second;
     }
 
-    public static int proizv(int first, int second)
+    public void delenie(double first, double second)
     {
-        return first * second;
+        result = (first / second) + (first % second);
     }
 
-    public static double delenie(double first, double second)
+    public void stepen(int first, int second)
     {
-        return (first / second) + (first % second);
+        result = (int) Math.pow(first,second);
     }
 
-    public static int stepen(int first, int second)
+    public double getResult()
     {
-        return (int) Math.pow(first,second);
+        return this.result;
+    }
+
+    public double cleanResult()
+    {
+        return this.result = 0;
     }
 }
