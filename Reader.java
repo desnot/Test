@@ -40,7 +40,7 @@ public class Reader {
                         break;
 
                     case "/":
-                        calculate.delenie(first, second);
+                        calculate.div(first, second);
                         break;
                     case "^":
                         calculate.stepen(first, second);
@@ -56,15 +56,13 @@ public class Reader {
                     break;
                 }
 
-
                 System.out.println("Do you want to use previous result? yes/no");
                 String choice = scanner.nextLine();
                 saveResult = usePreviousResult(choice, saveResult);
             }
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             scanner.close();
-            throw new Exception("Ooops... something went wrong!");
+            System.out.println(e.getClass() + ": \"" + e.getMessage());
         }
     }
 

@@ -15,9 +15,15 @@ public class Calculate {
         result = first * second;
     }
 
-    public void delenie(double first, double second)
-    {
-        result = (first / second) + (first % second);
+    public void div(double first, double second) throws ArithmeticException  {
+        if (second != 0) {
+            result = (first / second) + (first % second);
+        }
+
+        else {
+            throw new ArithmeticException("You tried to divide by 0");
+        }
+
     }
 
     public void stepen(double first, double second)
