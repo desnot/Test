@@ -1,5 +1,5 @@
 public class Calculate {
-    private double result;
+    private static double result;
 
     public void summa(double first, double second)
     {
