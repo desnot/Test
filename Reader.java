@@ -29,6 +29,7 @@ public class Reader {
                 System.out.println("Exit? yes/no");
                 exit = scanner.nextLine();
                 if (exit.equals("yes")) {
+                    scanner.close();
                     break;
                 }
                 saveResult = calculate.getResult();
@@ -36,6 +37,7 @@ public class Reader {
                 calculate.cleanResult();
             }
         } catch (Exception e) {
+            scanner.close();
             throw e;
         }
     }
