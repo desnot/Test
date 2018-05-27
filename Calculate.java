@@ -9,12 +9,10 @@ public class Calculate {
     {
         result = first - second;
     }
-
     public void proizv(double first, double second)
     {
         result = first * second;
     }
-
     public void div(double first, double second) throws ArithmeticException  {
         if (second != 0) {
             result = (first / second) + (first % second);
@@ -25,17 +23,14 @@ public class Calculate {
         }
 
     }
-
     public void stepen(double first, double second)
     {
         result = (int) Math.pow(first,second);
     }
-
     public double getResult()
     {
         return this.result;
     }
-
     public double cleanResult()
     {
         return this.result = 0;

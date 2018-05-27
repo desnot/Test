@@ -62,7 +62,7 @@ public class Reader {
             }
         } catch (Exception e) {
             scanner.close();
-            System.out.println(e.getClass() + ": \"" + e.getMessage());
+            throw e;
         }
     }
 
