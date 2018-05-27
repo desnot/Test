@@ -4,13 +4,15 @@ import java.util.Scanner;
  * Created by Юра on 24.05.2018.
  */
 public class Reader {
+    static String exit = "no";
+    static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) throws Exception {
         double saveResult = 0;
-        Scanner scanner = new Scanner(System.in);
+
         try {
             Calculate calculate = new Calculate();
-            String exit = "no";
-            while (!exit.equals("yes")) {
+
+            while (true) {
                 System.out.println("Please enter a first number");
                 double first;
                 if (saveResult == 0) {
@@ -47,19 +49,23 @@ public class Reader {
                 saveResult = calculate.getResult();
                 System.out.println(saveResult);
                 calculate.cleanResult();
+
                 System.out.println("Exit: yes/no");
                 exit = scanner.nextLine();
+                if (exit.equals("yes")) {
+                    break;
+                }
+
+
                 System.out.println("Do you want to use previous result? yes/no");
                 String choice = scanner.nextLine();
                 saveResult = usePreviousResult(choice, saveResult);
             }
-            scanner.close();
         }
         catch (Exception e){
             scanner.close();
             throw new Exception("Ooops... something went wrong!");
         }
-
     }
 
     public static double usePreviousResult(String choice, double result) {
