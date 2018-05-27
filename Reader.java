@@ -36,7 +36,7 @@ public class Reader {
                         break;
 
                     case "*":
-                        calculate.proizv(first, second);
+                        calculate.proizvedenie(first, second);
                         break;
 
                     case "/":

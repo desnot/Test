@@ -9,7 +9,7 @@ public class Calculate {
     {
         result = first - second;
     }
-    public void proizv(double first, double second)
+    public void proizvedenie(double first, double second)
     {
         result = first * second;
     }
