@@ -1,19 +1,19 @@
-public class Calculate {
+class Calculate {
     private static double result;
 
-    public void summa(double first, double second)
+    void summa(double first, double second)
     {
         result = first + second;
     }
-    public void vichitanie(double first, double second)
+    void vichitanie(double first, double second)
     {
         result = first - second;
     }
-    public void proizvedenie(double first, double second)
+    void proizvedenie(double first, double second)
     {
         result = first * second;
     }
-    public void div(double first, double second) throws ArithmeticException  {
+    void div(double first, double second) throws ArithmeticException  {
         if (second != 0) {
             result = (first / second) + (first % second);
         }
@@ -23,16 +23,16 @@ public class Calculate {
         }
 
     }
-    public void stepen(double first, double second)
+    void stepen(double first, double second)
     {
         result = (int) Math.pow(first,second);
     }
-    public double getResult()
+    double getResult()
     {
-        return this.result;
+        return result;
     }
-    public double cleanResult()
+    void cleanResult()
     {
-        return this.result = 0;
+        result = 0;
     }
 }

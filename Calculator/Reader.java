@@ -4,21 +4,21 @@ import java.util.Scanner;
  * Created by Юра on 24.05.2018.
  */
 public class Reader {
-    static Scanner scanner = new Scanner(System.in);
-    static Calculate calculate = new Calculate();
-    static boolean isResult = false;
-    public static void main(String[] args) throws Exception {
+    private static Scanner scanner = new Scanner(System.in);
+    private static Calculate calculate = new Calculate();
+    private static boolean isResult = false;
+    public static void main(String[] args) {
         try {
             double first;
             double saveResult = 0;
             String exit;
             while (true) {
-                if (!isResult) {
-                    System.out.println("Please enter a first number");
-                    first = Integer.parseInt(scanner.nextLine());
-                } else {
+                if (isResult) {
                     first = saveResult;
                     System.out.println("The first number is a " + first);
+                } else {
+                    System.out.println("Please enter a first number");
+                    first = Integer.parseInt(scanner.nextLine());
                 }
                 System.out.println("Please enter a second number");
                 double second = Integer.parseInt(scanner.nextLine());
@@ -42,17 +42,13 @@ public class Reader {
         }
     }
 
-    public static boolean usePreviousResult() {
+    private static void usePreviousResult() {
         System.out.println("Do you want to use previous result? yes/no");
         String choice = scanner.nextLine();
-        if (choice.equals("no")) {
-            return isResult = false;
-        } else {
-            return isResult = true;
-        }
+        isResult = !choice.equals("no");
     }
 
-    public static void choixAction(double first, double second, String deistvie) {
+    private static void choixAction(double first, double second, String deistvie) {
         switch (deistvie) {
             case "+":
                 calculate.summa(first, second);
@@ -69,8 +65,13 @@ public class Reader {
             case "/":
                 calculate.div(first, second);
                 break;
+
             case "^":
                 calculate.stepen(first, second);
+                break;
+
+            default:
+                System.out.println("Мне было лень описывать это действие");
                 break;
         }
     }
