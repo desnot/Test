@@ -31,6 +31,12 @@ public class CalculatorTest {
     }
 
     @Test
+    public void testDivZero() {
+        calculate.div(10, 0);
+        System.out.println(calculate.getResult());
+    }
+
+    @Test
     public void testStepen() {
         calculate.stepen(10, 2);
         System.out.println(calculate.getResult());
