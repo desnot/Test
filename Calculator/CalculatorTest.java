@@ -41,4 +41,10 @@ public class CalculatorTest {
         calculate.stepen(10, 2);
         System.out.println(calculate.getResult());
     }
+
+    @Test
+    public void testStepen1() {
+        calculate.stepen(10, 2);
+        System.out.println(calculate.getResult());
+    }
 }
